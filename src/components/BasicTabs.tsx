@@ -53,6 +53,11 @@ export default function BasicTabs() {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          TabIndicatorProps={{
+            style: {
+              display: 'none',
+            },
+          }}
         >
           <Tab label="Merchant" {...a11yProps(0)} />
           <Tab label="Gateway" {...a11yProps(1)} />
