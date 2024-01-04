@@ -10,6 +10,7 @@ export default function Navbar() {
         position="static"
         elevation={0}
         color="secondary"
+
         // sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Typography variant="headingM">System</Typography>

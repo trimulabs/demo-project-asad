@@ -34,6 +34,7 @@ export default function RootLayout({
               gap: '0px',
               padding: '24px',
               marginLeft: '212px',
+              background: '#F8FAFC',
             }}
           >
             <Navbar />

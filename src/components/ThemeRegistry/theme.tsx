@@ -116,7 +116,7 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'white',
+          backgroundColor: 'secondary',
         },
       },
     },
@@ -127,11 +127,29 @@ const theme = createTheme({
           textTransform: 'capitalize',
           padding: '12px',
           marginTop: '24px',
+          height: '32px',
+
+          '&.Mui-selected': {
+            backgroundColor: '#E3E8EF',
+          },
         },
-        //todo: change design style if the tab is selected
-        selected: {
-          border: '1px solid',
-          fontSize: '102px',
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: '100px',
+          textTransform: 'capitalize',
+          padding: '8px 12px ',
+          height: '24px',
+
+          '&.Mui-selected': {
+            backgroundColor: '#E3E8EF',
+          },
+        },
+        colorSuccess: {
+          background: '#CBEAD9',
+          color: 'black',
         },
       },
     },

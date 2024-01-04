@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import BasicList from './BsicList'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -59,7 +60,9 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <BasicList></BasicList>
+        </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Item Two
