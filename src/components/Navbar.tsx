@@ -28,7 +28,7 @@ export default function ButtonAppBar() {
         // sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
-          <Typography variant="h2">System</Typography>
+          <Typography variant="headingM">System</Typography>
         </Toolbar>
       </AppBar>
       <Toolbar />

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import Image from 'next/image'
 import * as React from 'react'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
@@ -13,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import SettingsIcon from '@mui/icons-material/Settings'
+import logo from '../Assets/Images/logo.png'
 
 const drawerWidth = 212
 
@@ -42,7 +44,9 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar />
+        <Toolbar>
+          <Image src={logo} alt="LOGO"></Image>
+        </Toolbar>
         <Divider />
         <List>
           {ListItemsP1.map((text, index) => (

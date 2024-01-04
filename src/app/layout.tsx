@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 
@@ -10,23 +10,7 @@ import Container from '@mui/material/Container'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const sidebarItems = [
-  'Item 1',
-  'Item 2',
-  'Item 3',
-  'Item 4',
-  'Item 5',
-  'Item 6',
-  'Item 7',
-  'Item 8',
-  'Item 9',
-  'Item 10',
-  'Item 11',
-  'Item 12',
-  'Item 13',
-]
+const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -40,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={jakartaSans.className}>
         <ThemeRegistry>
           <div style={{ display: 'flex' }}>
             <CssBaseline />

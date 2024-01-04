@@ -1,4 +1,64 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createTheme } from '@mui/material'
+import { Plus_Jakarta_Sans } from 'next/font/google'
+
+const jakartaSans = Plus_Jakarta_Sans({
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+})
+
+const typographyOptions = {
+  fontFamily: jakartaSans.style.fontFamily,
+  headingM: {
+    fontSize: '40px',
+    fontWeight: 700,
+    lineHeight: '120%',
+  },
+  headingS: {
+    fontSize: '32px',
+    fontWeight: 700,
+    lineHeight: '125%',
+  },
+  headingXS: {
+    fontSize: '24px',
+    fontWeight: 700,
+    lineHeight: '133.333%',
+  },
+  labelXL: {
+    fontSize: '20px',
+    fontWeight: 700,
+    lineHeight: '140%',
+  },
+  labelL: {
+    fontSize: '18px',
+    fontWeight: 600,
+    lineHeight: '155.556%',
+  },
+  labelM: {
+    fontSize: '16px',
+    fontWeight: 600,
+    lineHeight: '150%',
+  },
+  labelS: {
+    fontSize: '14px',
+    fontWeight: 600,
+    lineHeight: '142.857%',
+  },
+  labelXS: {
+    fontSize: '12px',
+    fontWeight: 600,
+    lineHeight: '133%',
+  },
+  errorBodyXS: {
+    fontSize: '11px',
+    fontWeight: 400,
+    lineHeight: '150%',
+    marginBottom: '4px',
+    minHeight: '12px',
+    marginLeft: '12px',
+  },
+}
 
 const theme = createTheme({
   palette: {
@@ -9,6 +69,9 @@ const theme = createTheme({
       main: '#F8FAFC',
     },
   },
+
+  typography: typographyOptions,
+
   components: {
     MuiButton: {
       styleOverrides: {
