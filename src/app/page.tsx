@@ -1,6 +1,14 @@
 // import Image from 'next/image'
-// import styles from './page.module.css'
+
+import { Typography, Button } from '@mui/material'
 
 export default function Home() {
-  return <h1>Hello GOV</h1>
+  return (
+    <>
+      <Typography variant="h1">Heading</Typography>
+      <Button color="secondary" variant="contained">
+        Contained
+      </Button>
+    </>
+  )
 }
