@@ -120,6 +120,21 @@ const theme = createTheme({
         },
       },
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          borderRadius: '8px',
+          textTransform: 'capitalize',
+          padding: '12px',
+          marginTop: '24px',
+        },
+        //todo: change design style if the tab is selected
+        selected: {
+          border: '1px solid',
+          fontSize: '102px',
+        },
+      },
+    },
   },
 })
 
