@@ -140,12 +140,8 @@ const theme = createTheme({
         root: {
           borderRadius: '100px',
           textTransform: 'capitalize',
-          padding: '8px 12px ',
+          padding: '8px 12px 8px 12px',
           height: '24px',
-
-          '&.Mui-selected': {
-            backgroundColor: '#E3E8EF',
-          },
         },
         colorSuccess: {
           background: '#CBEAD9',
