@@ -6,7 +6,7 @@ import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
-import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 
@@ -26,12 +26,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={jakartaSans.className}>
         <ThemeRegistry>
-          <div style={{ display: 'flex' }}>
-            <CssBaseline />
-            <Sidebar />
+          <CssBaseline />
+          <Sidebar />
+
+          <Box
+            sx={{
+              gap: '0px',
+              padding: '24px',
+              marginLeft: '212px',
+            }}
+          >
             <Navbar />
-            <Container>{children}</Container>
-          </div>
+            {children}
+          </Box>
         </ThemeRegistry>
       </body>
     </html>

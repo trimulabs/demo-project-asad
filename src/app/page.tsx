@@ -1,14 +1,16 @@
 // import Image from 'next/image'
 
 import { Typography, Button } from '@mui/material'
+import BasicTabs from '@/components/BasicTabs'
 
 export default function Home() {
   return (
     <>
-      <Typography variant="h1">Heading</Typography>
-      <Button color="secondary" variant="contained">
+      <BasicTabs></BasicTabs>
+
+      {/* <Button color="secondary" variant="contained">
         Contained
-      </Button>
+      </Button> */}
     </>
   )
 }

@@ -44,10 +44,10 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar>
+        <Toolbar sx={{ marginTop: '20px' }}>
           <Image src={logo} alt="LOGO"></Image>
         </Toolbar>
-        <Divider />
+
         <List>
           {ListItemsP1.map((text, index) => (
             <ListItem key={text} disablePadding>

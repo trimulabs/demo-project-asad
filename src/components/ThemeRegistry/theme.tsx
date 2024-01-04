@@ -8,6 +8,23 @@ const jakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
 })
 
+interface CustomTypographyVariants {
+  headingM: React.CSSProperties
+  headingS: React.CSSProperties
+  headingXS: React.CSSProperties
+  labelXL: React.CSSProperties
+  labelL: React.CSSProperties
+  labelM: React.CSSProperties
+  labelS: React.CSSProperties
+  labelXS: React.CSSProperties
+  errorBodyXS: React.CSSProperties
+}
+
+declare module '@mui/material/styles' {
+  interface TypographyVariants extends CustomTypographyVariants {}
+  interface TypographyVariantsOptions extends CustomTypographyVariants {}
+}
+
 const typographyOptions = {
   fontFamily: jakartaSans.style.fontFamily,
   headingM: {
@@ -100,7 +117,6 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: 'white',
-          padding: '24px',
         },
       },
     },
