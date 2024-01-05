@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Tabs, Tab, Typography, Box } from '@mui/material'
-import BasicList from './BsicList'
+import MerchantData from './MerchantData'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -36,7 +36,7 @@ function a11yProps(index: number) {
   }
 }
 
-export default function BasicTabs() {
+export default function SettingsTabs() {
   const [value, setValue] = useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -63,12 +63,14 @@ export default function BasicTabs() {
       </Box>
       <CustomTabPanel value={value} index={0}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <BasicList></BasicList>
+          <MerchantData />
         </Box>
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={1}>
         Item Two
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={2}>
         Item Three
       </CustomTabPanel>

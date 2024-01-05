@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Box, Typography, Stack, Chip, Button } from '@mui/material'
 import theme from './ThemeRegistry/theme'
 
-export default function BasicList() {
+export default function MerchantData() {
   return (
     <Box sx={{ width: '608px' }}>
       {[
