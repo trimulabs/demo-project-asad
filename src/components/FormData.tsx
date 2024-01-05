@@ -55,8 +55,8 @@ export default function FromData() {
               width: '52px',
               height: '52px',
               bgcolor: COLORS.lightBlue,
-              padding: '10px',
-              borderRadius: '12px',
+              padding: theme.spacing(1.25),
+              borderRadius: theme.spacing(1.5),
             }}
           >
             <Avatar
