@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import FormData from '@/components/FormData'
 import GenericList from '@/components/GenericList'
 

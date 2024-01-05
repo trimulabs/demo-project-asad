@@ -5,7 +5,6 @@ import {
   List,
   ListItem,
   ListItemText,
-  Divider,
   Avatar,
   Typography,
   Button,
@@ -73,21 +72,31 @@ export default function FromData() {
           Edit
         </Button>
       </Stack>
-
-      <List sx={{ padding: theme.spacing(2.5) }}>
+      <Box sx={{ padding: theme.spacing(2.5) }}>
         {data.map((item) => (
-          <ListItem
+          <Box
             key={item.entity}
-            disablePadding={true}
             sx={{
               borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
-              paddingBottom: theme.spacing(1.5),
             }}
           >
-            <ListItemText primary={item.entity} secondary={item.content} />
-          </ListItem>
+            <Stack
+              direction="column"
+              sx={{
+                paddingBottom: theme.spacing(1.5),
+                gap: theme.spacing(0.75),
+              }}
+            >
+              <Box>
+                <Typography variant="labelS">{item.entity}</Typography>
+              </Box>
+              <Box>
+                <Typography variant="labelSS">{item.content}</Typography>
+              </Box>
+            </Stack>
+          </Box>
         ))}
-      </List>
+      </Box>
     </Box>
   )
 }

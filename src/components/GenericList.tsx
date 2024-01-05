@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Divider,
-  Typography,
-} from '@mui/material'
+import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
 
 import COLORS from '@/styles/colors'
 import theme from '@/styles/ThemeRegistry/theme'
