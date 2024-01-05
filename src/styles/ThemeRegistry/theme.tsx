@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createTheme } from '@mui/material'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import COLORS from '@/styles/colors'

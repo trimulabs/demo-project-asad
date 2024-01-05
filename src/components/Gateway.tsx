@@ -8,10 +8,7 @@ const listData1 = [
   { entity: 'After hours', content: '(800) 228-0210' },
   { entity: 'Chargeback Department', content: '(818) 540-3407' },
 ]
-const listData2 = [
-  // { entity: 'Merchant Name', content: 'busa-cs@bankcardusa.com' },
-  { content: 'busa-cs@bankcardusa.com' },
-]
+const listData2 = [{ content: 'busa-cs@bankcardusa.com' }]
 
 const Gateway = () => {
   return (

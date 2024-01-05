@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import Image from 'next/image'
 import * as React from 'react'
@@ -6,7 +5,6 @@ import {
   Drawer,
   Toolbar,
   List,
-  Typography,
   Divider,
   ListItem,
   ListItemButton,
@@ -16,7 +14,6 @@ import {
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import SettingsIcon from '@mui/icons-material/Settings'
-// import logo from '../../public/Assets/Images/logo.png'
 import logo from '@/../public/Assets/Images/logo.png'
 import theme from '@/styles/ThemeRegistry/theme'
 
@@ -90,7 +87,7 @@ export default function PermanentDrawerLeft() {
 
         <List>
           {ListItemsP3.map((text, index) => (
-            <ListItem key={text} disablePadding>
+            <ListItem key={index} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   <SettingsIcon color="secondary" />
