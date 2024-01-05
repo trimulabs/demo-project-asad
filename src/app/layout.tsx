@@ -6,7 +6,7 @@ import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 
