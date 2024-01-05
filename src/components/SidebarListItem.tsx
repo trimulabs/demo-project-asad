@@ -32,12 +32,7 @@ const SidebarListItem: React.FC<Prop> = ({ title, icon }) => {
           alignItems: 'center',
         }}
       >
-        <Image
-          src="@/Assets/Icons/home-smile.svg"
-          alt="icon"
-          width={16}
-          height={16}
-        />
+        <Image src={home} alt="icon" width={16} height={16} />
 
         <Typography variant="sidebarList">{title}</Typography>
       </Box>
