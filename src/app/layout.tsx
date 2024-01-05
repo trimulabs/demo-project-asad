@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
-import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
+import ThemeRegistry from '@/styles/ThemeRegistry/ThemeRegistry'
 
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'

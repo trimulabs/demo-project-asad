@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
 import { Box, Typography, Stack, Chip, Button } from '@mui/material'
-import theme from './ThemeRegistry/theme'
+import theme from '../styles/ThemeRegistry/theme'
 
 export default function MerchantData() {
   return (
