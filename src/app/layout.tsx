@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { Box } from '@mui/material'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
+import COLORS from '@/styles/colors'
 
 const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
@@ -34,7 +35,7 @@ export default function RootLayout({
               gap: '0px',
               padding: 3,
               marginLeft: '212px',
-              background: '#F8FAFC',
+              background: COLORS.secondaryWhite,
             }}
           >
             <Navbar />

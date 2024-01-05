@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createTheme } from '@mui/material'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import COLORS from '../colors'
 
 const jakartaSans = Plus_Jakarta_Sans({
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -80,10 +81,10 @@ const typographyOptions = {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#003343',
+      main: COLORS.primary,
     },
     secondary: {
-      main: '#F8FAFC',
+      main: COLORS.secondaryWhite,
     },
   },
 
@@ -96,7 +97,7 @@ const theme = createTheme({
           borderRadius: 8,
           textTransform: 'none',
           color: 'white',
-          backgroundColor: '#121926',
+          backgroundColor: COLORS.btnColor,
 
           paddingTop: '6px',
           paddingBottom: '6px',
@@ -116,7 +117,7 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'secondary',
+          backgroundColor: COLORS.secondaryWhite,
         },
       },
     },
@@ -130,7 +131,7 @@ const theme = createTheme({
           height: '32px',
 
           '&.Mui-selected': {
-            backgroundColor: '#E3E8EF',
+            backgroundColor: COLORS.selected,
           },
         },
       },
@@ -144,7 +145,7 @@ const theme = createTheme({
           height: '24px',
         },
         colorSuccess: {
-          background: '#CBEAD9',
+          background: COLORS.badgeSuccess,
           color: 'black',
         },
       },

@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Box, Typography, Stack, Chip, Button } from '@mui/material'
 import theme from '../styles/ThemeRegistry/theme'
+import COLORS from '@/styles/colors'
 
 export default function MerchantData() {
   return (
@@ -44,7 +45,7 @@ export default function MerchantData() {
                   height: '40px',
                   p: theme.spacing(1.25),
                   borderRadius: theme.spacing(1),
-                  background: '#EEF2F6',
+                  background: COLORS.selected,
                 }}
               >
                 {index + 1}
@@ -53,9 +54,7 @@ export default function MerchantData() {
               <Chip color="success" label="Active" />
             </Stack>
 
-            <Button color="secondary" variant="contained">
-              Manage
-            </Button>
+            <Button variant="contained">Manage</Button>
           </Box>
         )
       })}
