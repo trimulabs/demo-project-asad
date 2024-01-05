@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Tabs, Tab, Typography, Box } from '@mui/material'
-import MerchantData from './MerchantData'
+import MerchantData from '@/components/MerchantData'
 
 interface TabPanelProps {
   children?: React.ReactNode

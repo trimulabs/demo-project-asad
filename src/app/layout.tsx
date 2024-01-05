@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
@@ -6,10 +5,11 @@ import ThemeRegistry from '@/styles/ThemeRegistry/ThemeRegistry'
 
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
-import { Box } from '@mui/material'
-import Sidebar from '../components/Sidebar'
-import Navbar from '../components/Navbar'
-import COLORS from '@/styles/colors'
+
+import Sidebar from '@/components/Sidebar'
+import Navbar from '@/components/Navbar'
+
+import Wrapper from '@/components/Wrapper'
 
 const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
@@ -29,18 +29,19 @@ export default function RootLayout({
         <ThemeRegistry>
           <CssBaseline />
           <Sidebar />
-
-          <Box
-            sx={{
+          <Wrapper>
+            {/* <Box
+            sx={(theme) => ({
               gap: '0px',
-              padding: 3,
+              padding: theme.spacing(3),
               marginLeft: '212px',
               background: COLORS.secondaryWhite,
-            }}
-          >
+            })}
+          > */}
             <Navbar />
             {children}
-          </Box>
+          </Wrapper>
+          {/* </Box> */}
         </ThemeRegistry>
       </body>
     </html>

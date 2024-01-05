@@ -16,8 +16,9 @@ import {
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import SettingsIcon from '@mui/icons-material/Settings'
-import logo from '../../public/Assets/Images/logo.png'
-import theme from '../styles/ThemeRegistry/theme'
+// import logo from '../../public/Assets/Images/logo.png'
+import logo from '@/../public/Assets/Images/logo.png'
+import theme from '@/styles/ThemeRegistry/theme'
 
 const drawerWidth = 212
 

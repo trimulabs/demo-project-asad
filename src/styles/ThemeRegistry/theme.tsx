@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createTheme } from '@mui/material'
 import { Plus_Jakarta_Sans } from 'next/font/google'
-import COLORS from '../colors'
+import COLORS from '@/styles/colors'
 
 const jakartaSans = Plus_Jakarta_Sans({
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -19,6 +19,40 @@ interface CustomTypographyVariants {
   labelS: React.CSSProperties
   labelXS: React.CSSProperties
   errorBodyXS: React.CSSProperties
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    displayXL: true
+    displayL: true
+    displayM: true
+    displayS: true
+    headingXL: true
+    headingL: true
+    headingM: true
+    headingS: true
+    headingXS: true
+    headingXSM: true
+    headingXXS: true
+    labelXL: true
+    labelL: true
+    labelM: true
+    labelS: true
+    labelXS: true
+    bodyXL: true
+    bodyL: true
+    bodyM: true
+    bodyS: true
+    bodyXS: true
+    labelMd: true
+    labelSB: true
+    bodySM: true
+    bodySSM: true
+    bodyMM: true
+
+    bodySSX: true
+    bodySXX: true
+  }
 }
 
 declare module '@mui/material/styles' {
