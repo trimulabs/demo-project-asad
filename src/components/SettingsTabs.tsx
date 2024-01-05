@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { Tabs, Tab, Typography, Box } from '@mui/material'
+import { Tabs, Tab, Box } from '@mui/material'
 import MerchantData from '@/components/MerchantData'
 import Gateway from '@/components/Gateway'
 
