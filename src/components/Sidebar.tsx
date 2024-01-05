@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import Image from 'next/image'
 import * as React from 'react'
 import {
   Drawer,
   Toolbar,
+  Box,
+  Typography,
+  Stack,
   List,
   Divider,
   ListItem,
@@ -14,8 +18,12 @@ import {
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import SettingsIcon from '@mui/icons-material/Settings'
-import logo from '@/../public/Assets/Images/logo.png'
+import logo from '@/../public/Assets/Images/logo.svg'
 import theme from '@/styles/ThemeRegistry/theme'
+import SidebarList from '@/components/SidebarListItem'
+import COLORS from '@/styles/colors'
+import userImg from '@/../public/Assets/Images/user.svg'
+import chevronUp from '@/../public/Assets/Icons/chevron-up.svg'
 
 const drawerWidth = 212
 
@@ -45,75 +53,73 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar sx={{ marginTop: theme.spacing(2.5) }}>
+        <Toolbar
+          sx={{
+            padding: '32px 24px 32px 24px',
+          }}
+        >
           <Image src={logo} alt="LOGO"></Image>
         </Toolbar>
 
-        <List>
-          {ListItemsP1.map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? (
-                    <InboxIcon color="secondary" />
-                  ) : (
-                    <MailIcon color="secondary" />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider sx={{ backgroundColor: 'grey' }} />
-        <List>
-          {ListItemsP2.map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? (
-                    <InboxIcon color="secondary" />
-                  ) : (
-                    <MailIcon color="secondary" />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-
-        <Divider sx={{ backgroundColor: 'grey' }} />
-
-        <List>
-          {ListItemsP3.map((text, index) => (
-            <ListItem key={index} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <SettingsIcon color="secondary" />
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <ListItem
+        <Box
           sx={{
-            color: 'white',
-            justifyContent: 'center',
-            textAlign: 'right',
-            backgroundColor: 'primary',
-            boxShadow: '0 -1px 0 #404854 inset',
-            // paddingTop: theme.spacing(2),
-            // paddingBottom: theme.spacing(2),
-            top: 'auto',
-            position: 'relative',
-            bottom: 0,
-            boxSizing: 'border-box',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignContent: 'space-between',
+            height: '100%',
+            paddingBottom: theme.spacing(3),
           }}
         >
-          Footer
-        </ListItem>
+          <Box>
+            <SidebarList title="Lead" icon="home" />
+            <SidebarList title="Customers" icon="home" />
+            <SidebarList title="Order" icon="home" />
+            <SidebarList title="Applications" icon="home" />
+            <SidebarList title="Manifest" icon="home" />
+
+            <Divider sx={{ bgcolor: COLORS.selected }} />
+
+            <SidebarList title="Channels" icon="home" />
+            <SidebarList title="Products" icon="home" />
+            <SidebarList title="Fulfilment" icon="home" />
+
+            <Divider sx={{ bgcolor: COLORS.selected }} />
+
+            <SidebarList title="Team" icon="home" />
+            <SidebarList title="Reports" icon="home" />
+            <SidebarList title="System" icon="home" />
+            <SidebarList title="Settings" icon="home" />
+          </Box>
+          <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                padding: '0px 24px',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '8px',
+                alignSelf: 'stretch',
+              }}
+            >
+              <Stack
+                direction={'row'}
+                sx={{
+                  borderRadius: '8px',
+                  p: '8px',
+                  gap: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <Image src={userImg} alt="icon" />
+                <Typography variant="sidebarList">User name</Typography>
+              </Stack>
+
+              <Image src={chevronUp} alt="icon" />
+            </Box>
+          </Box>
+        </Box>
       </Drawer>
     </>
   )

@@ -17,6 +17,7 @@ interface CustomTypographyVariants {
   labelM: React.CSSProperties
   labelS: React.CSSProperties
   labelSS: React.CSSProperties
+  sidebarList: React.CSSProperties
   labelXS: React.CSSProperties
   errorBodyXS: React.CSSProperties
 }
@@ -39,6 +40,7 @@ declare module '@mui/material/Typography' {
     labelM: true
     labelS: true
     labelSS: true
+    sidebarList: true
     labelXS: true
     bodyXL: true
     bodyL: true
@@ -50,7 +52,6 @@ declare module '@mui/material/Typography' {
     bodySM: true
     bodySSM: true
     bodyMM: true
-
     bodySSX: true
     bodySXX: true
   }
@@ -102,6 +103,11 @@ const typographyOptions = {
     fontSize: '14px',
     fontWeight: 500,
     lineHeight: '142.857%',
+  },
+  sidebarList: {
+    fontSize: '13px',
+    fontWeight: 500,
+    lineHeight: '153.846%',
   },
   labelXS: {
     fontSize: '12px',
