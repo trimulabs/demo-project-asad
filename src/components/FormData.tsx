@@ -1,18 +1,11 @@
+import Image from 'next/image'
 import * as React from 'react'
-import {
-  Box,
-  Stack,
-  List,
-  ListItem,
-  ListItemText,
-  Avatar,
-  Typography,
-  Button,
-} from '@mui/material'
+import { Box, Stack, Avatar, Typography, Button } from '@mui/material'
 
 import COLORS from '@/styles/colors'
 import theme from '@/styles/ThemeRegistry/theme'
-import EmptyUser from '@/../public/Assets/Icons/EmptyUser.png'
+import EmptyUser from '@/../public/Assets/Icons/EmptyUser.svg'
+import editIcon from '@/../public/Assets/Icons/edit-03.svg'
 
 const data = [
   { entity: 'Merchant Name', content: 'ABC Payments' },
@@ -56,28 +49,43 @@ export default function FromData() {
           direction="row"
           spacing={2}
         >
-          <Avatar
-            variant="square"
-            src={EmptyUser.src}
+          <Box
             sx={{
-              bgcolor: COLORS.lightBlue,
               width: '52px',
               height: '52px',
-              borderRadius: theme.spacing(1.5),
+              bgcolor: COLORS.lightBlue,
+              padding: '10px',
+              borderRadius: '12px',
             }}
-          />
+          >
+            <Avatar
+              src={EmptyUser.src}
+              sx={{
+                width: '28px',
+                height: '28px',
+              }}
+            />
+          </Box>
+
           <Typography variant="labelL">Merchant Details</Typography>
         </Stack>
-        <Button color="secondary" variant="contained">
+        <Button
+          color="secondary"
+          variant="contained"
+          sx={{ gap: theme.spacing(1) }}
+        >
+          <Image src={editIcon} alt="icon"></Image>
           Edit
         </Button>
       </Stack>
+
       <Box sx={{ padding: theme.spacing(2.5) }}>
         {data.map((item) => (
           <Box
             key={item.entity}
             sx={{
               borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
+              marginBottom: theme.spacing(3),
             }}
           >
             <Stack
