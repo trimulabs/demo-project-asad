@@ -21,7 +21,8 @@ export default function FromData() {
   return (
     <Box
       sx={{
-        width: '608px',
+        // width: '608px',
+        width: '95%',
         bgcolor: COLORS.white,
         borderRadius: theme.spacing(2),
         border: `1px solid var(--grayscale-200, ${COLORS.selected})`,
@@ -80,18 +81,23 @@ export default function FromData() {
       </Stack>
 
       <Box sx={{ padding: theme.spacing(2.5) }}>
-        {data.map((item) => (
+        {data.map((item, index) => (
           <Box
-            key={item.entity}
+            key={index}
             sx={{
-              borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
-              marginBottom: theme.spacing(3),
+              borderBottom:
+                index !== data.length - 1
+                  ? `1px solid var(--grayscale-200, ${COLORS.selected})`
+                  : 'none',
+              marginBottom:
+                index !== data.length - 1 ? theme.spacing(3) : 'none',
             }}
           >
             <Stack
               direction="column"
               sx={{
-                paddingBottom: theme.spacing(1.5),
+                paddingBottom:
+                  index !== data.length - 1 ? theme.spacing(1.5) : 'none',
                 gap: theme.spacing(0.75),
               }}
             >
