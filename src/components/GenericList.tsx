@@ -1,10 +1,19 @@
 import React from 'react'
-import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
-
+import { Box, Typography, Stack } from '@mui/material'
 import COLORS from '@/styles/colors'
 import theme from '@/styles/ThemeRegistry/theme'
 
-const GenericList = () => {
+interface DataObject {
+  entity?: string
+  content: string
+}
+
+interface GenericListProps {
+  title: string
+  data: DataObject[]
+}
+
+const GenericList: React.FC<GenericListProps> = ({ title, data }) => {
   return (
     <Box
       sx={{
@@ -21,22 +30,40 @@ const GenericList = () => {
           borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
         }}
       >
-        <Typography variant="labelL">
-          Support Department phone numbers
-        </Typography>
+        <Typography variant="labelL">{title}</Typography>
       </Box>
 
-      <List sx={{ padding: theme.spacing(2.5) }}>
-        <ListItem
-          disablePadding={true}
-          sx={{
-            borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
-            paddingBottom: theme.spacing(1.5),
-          }}
-        >
-          <ListItemText primary="Hello" secondary="World" />
-        </ListItem>
-      </List>
+      <Box sx={{ padding: theme.spacing(2.5) }}>
+        {data.map((item, index) => (
+          <Box
+            key={index}
+            sx={{
+              borderBottom:
+                index !== data.length - 1
+                  ? `1px solid var(--grayscale-200, ${COLORS.selected})`
+                  : 'none',
+              marginBottom:
+                index !== data.length - 1 ? theme.spacing(3) : 'none',
+            }}
+          >
+            <Stack
+              direction="column"
+              sx={{
+                paddingBottom:
+                  index !== data.length - 1 ? theme.spacing(1.5) : 'none',
+                gap: theme.spacing(0.75),
+              }}
+            >
+              <Box>
+                <Typography variant="labelS">{item.entity}</Typography>
+              </Box>
+              <Box>
+                <Typography variant="labelSS">{item.content}</Typography>
+              </Box>
+            </Stack>
+          </Box>
+        ))}
+      </Box>
     </Box>
   )
 }
