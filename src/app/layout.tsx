@@ -32,7 +32,7 @@ export default function RootLayout({
           <Box
             sx={{
               gap: '0px',
-              padding: '24px',
+              padding: 3,
               marginLeft: '212px',
               background: '#F8FAFC',
             }}

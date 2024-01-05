@@ -17,6 +17,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import SettingsIcon from '@mui/icons-material/Settings'
 import logo from '../Assets/Images/logo.png'
+import theme from './ThemeRegistry/theme'
 
 const drawerWidth = 212
 
@@ -46,7 +47,7 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar sx={{ marginTop: '20px' }}>
+        <Toolbar sx={{ marginTop: theme.spacing(2.5) }}>
           <Image src={logo} alt="LOGO"></Image>
         </Toolbar>
 

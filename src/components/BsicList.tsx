@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
 import { Box, Typography, Stack, Chip, Button } from '@mui/material'
+import theme from './ThemeRegistry/theme'
 
 export default function BasicList() {
   return (
@@ -20,11 +21,11 @@ export default function BasicList() {
               justifyContent: 'space-between',
               alignItems: 'center',
               alignContent: 'center',
-              background: '#FFFFFF',
-              borderRadius: '16px',
+              background: 'white',
+              borderRadius: theme.spacing(2),
               border: '0.5px',
-              p: '16px',
-              mt: '16px',
+              p: theme.spacing(2),
+              mt: theme.spacing(2),
               textAlign: 'center',
             }}
           >
@@ -41,8 +42,8 @@ export default function BasicList() {
                 sx={{
                   width: '40px',
                   height: '40px',
-                  p: '10px',
-                  borderRadius: '8px',
+                  p: theme.spacing(1.25),
+                  borderRadius: theme.spacing(1),
                   background: '#EEF2F6',
                 }}
               >
