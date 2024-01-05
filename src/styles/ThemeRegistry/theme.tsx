@@ -129,14 +129,17 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
+          padding: '6px 20px',
           textTransform: 'none',
+          boxShadow: 'none',
+        },
+        containedPrimary: {
           color: 'white',
-          backgroundColor: COLORS.btnColor,
-
-          paddingTop: '6px',
-          paddingBottom: '6px',
-          paddingLeft: '20px',
-          paddingRight: '20px',
+          backgroundColor: COLORS.btnBlack,
+        },
+        containedSecondary: {
+          color: 'black',
+          backgroundColor: COLORS.btnLightBlue,
         },
       },
     },

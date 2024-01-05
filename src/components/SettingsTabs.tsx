@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Tabs, Tab, Typography, Box } from '@mui/material'
 import MerchantData from '@/components/MerchantData'
+import Gateway from '@/components/Gateway'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -68,7 +69,7 @@ export default function SettingsTabs() {
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <Gateway />
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>
