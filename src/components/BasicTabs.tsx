@@ -1,9 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
+import { Tabs, Tab, Typography, Box } from '@mui/material'
 import BasicList from './BsicList'
 
 interface TabPanelProps {

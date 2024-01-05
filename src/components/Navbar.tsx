@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
-import AppBar from '@mui/material/AppBar'
-import Typography from '@mui/material/Typography'
+import { AppBar, Typography } from '@mui/material'
 
 export default function Navbar() {
   return (

@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
-import Box from '@mui/material/Box'
-import { Typography } from '@mui/material'
-import { Stack, Chip, Button } from '@mui/material'
+import { Box, Typography, Stack, Chip, Button } from '@mui/material'
 
 export default function BasicList() {
   return (
