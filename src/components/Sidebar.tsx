@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import Image from 'next/image'
 import * as React from 'react'
@@ -12,17 +11,6 @@ import chevronUp from '@/../public/Assets/Icons/chevron-up.svg'
 import home from '@/../public/Assets/Icons/home-smile.svg'
 
 const drawerWidth = 212
-
-const ListItemsP1 = [
-  'Leads',
-  'Customers',
-  'Orders',
-  'Applications',
-  'Manifest',
-  'Refunds',
-]
-const ListItemsP2 = ['Channels', 'Products', 'Fulfilment']
-const ListItemsP3 = ['Team', 'Reports', 'System', 'Settings']
 
 export default function PermanentDrawerLeft() {
   return (

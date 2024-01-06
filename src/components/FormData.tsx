@@ -25,7 +25,7 @@ export default function FromData() {
         width: '95%',
         bgcolor: COLORS.white,
         borderRadius: theme.spacing(2),
-        border: `1px solid var(--grayscale-200, ${COLORS.selected})`,
+        border: `1px solid ${COLORS.selected}`,
       }}
     >
       <Stack
@@ -36,7 +36,7 @@ export default function FromData() {
           display: 'flex',
           justifyContent: 'space-between',
           padding: '16px 20px 16px 20px',
-          borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
+          borderBottom: `1px solid ${COLORS.selected}`,
         }}
         direction="row"
         spacing={2}
@@ -87,7 +87,7 @@ export default function FromData() {
             sx={{
               borderBottom:
                 index !== data.length - 1
-                  ? `1px solid var(--grayscale-200, ${COLORS.selected})`
+                  ? `1px solid ${COLORS.selected}`
                   : 'none',
               marginBottom:
                 index !== data.length - 1 ? theme.spacing(3) : 'none',

@@ -21,13 +21,13 @@ const GenericList: React.FC<GenericListProps> = ({ title, data }) => {
         bgcolor: COLORS.white,
         borderRadius: theme.spacing(2),
         marginBottom: theme.spacing(2),
-        border: `1px solid var(--grayscale-200, ${COLORS.selected})`,
+        border: `1px solid ${COLORS.selected}`,
       }}
     >
       <Box
         sx={{
           padding: '16px 20px 16px 20px',
-          borderBottom: `1px solid var(--grayscale-200, ${COLORS.selected})`,
+          borderBottom: `1px solid ${COLORS.selected}`,
         }}
       >
         <Typography variant="labelL">{title}</Typography>
@@ -40,7 +40,7 @@ const GenericList: React.FC<GenericListProps> = ({ title, data }) => {
             sx={{
               borderBottom:
                 index !== data.length - 1
-                  ? `1px solid var(--grayscale-200, ${COLORS.selected})`
+                  ? `1px solid  ${COLORS.selected}`
                   : 'none',
               marginBottom:
                 index !== data.length - 1 ? theme.spacing(3) : 'none',
