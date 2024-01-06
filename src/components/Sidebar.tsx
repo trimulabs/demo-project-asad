@@ -1,123 +1,108 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import Image from 'next/image'
-import * as React from 'react'
-import {
-  Drawer,
-  Toolbar,
-  List,
-  Typography,
-  Divider,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from '@mui/material'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
-import SettingsIcon from '@mui/icons-material/Settings'
-// import logo from '../../public/Assets/Images/logo.png'
-import logo from '@/../public/Assets/Images/logo.png'
+import React, { useState } from 'react'
+import { Drawer, Toolbar, Box, Typography, Stack, Divider } from '@mui/material'
+import logo from '@/../public/Assets/Images/logo.svg'
 import theme from '@/styles/ThemeRegistry/theme'
+import SidebarList from '@/components/SidebarListItem'
+import COLORS from '@/styles/colors'
+import userImg from '@/../public/Assets/Images/user.svg'
+import chevronUp from '@/../public/Assets/Icons/chevron-up.svg'
+
+import { SIDEBAR_MENU } from '@/data/constants'
 
 const drawerWidth = 212
 
-const ListItemsP1 = [
-  'Leads',
-  'Customers',
-  'Orders',
-  'Applications',
-  'Manifest',
-  'Refunds',
-]
-const ListItemsP2 = ['Channels', 'Products', 'Fulfilment']
-const ListItemsP3 = ['Team', 'Reports', 'System', 'Settings']
-
 export default function PermanentDrawerLeft() {
+  const [selectedItem, setSelectedItem] = useState<number | null>(null)
+  const handleItemClick = (index: number) => {
+    setSelectedItem(index)
+  }
+
   return (
-    <>
-      <Drawer
-        sx={{
+    <Drawer
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        '& .MuiDrawer-paper': {
           width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
+          boxSizing: 'border-box',
+        },
+      }}
+      variant="permanent"
+      anchor="left"
+    >
+      <Toolbar
+        sx={{
+          padding: '32px 24px 32px 24px',
         }}
-        variant="permanent"
-        anchor="left"
       >
-        <Toolbar sx={{ marginTop: theme.spacing(2.5) }}>
-          <Image src={logo} alt="LOGO"></Image>
-        </Toolbar>
+        <Image src={logo} alt="LOGO"></Image>
+      </Toolbar>
 
-        <List>
-          {ListItemsP1.map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? (
-                    <InboxIcon color="secondary" />
-                  ) : (
-                    <MailIcon color="secondary" />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignContent: 'space-between',
+          height: '100%',
+          paddingBottom: theme.spacing(3),
+        }}
+      >
+        <Box>
+          {SIDEBAR_MENU?.map(({ title, Icon }, index) => (
+            <React.Fragment key={index}>
+              <Box onClick={() => handleItemClick(index)}>
+                <SidebarList
+                  title={title}
+                  icon={() => (
+                    <Icon
+                      color={
+                        selectedItem === index
+                          ? COLORS.iconSelected
+                          : COLORS.icon
+                      }
+                    />
                   )}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
+                  isSelected={selectedItem === index}
+                />
+              </Box>
+              {(index === 5 || index === 8) && (
+                <Divider color={COLORS.sideDivider} />
+              )}
+            </React.Fragment>
           ))}
-        </List>
-        <Divider sx={{ backgroundColor: 'grey' }} />
-        <List>
-          {ListItemsP2.map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? (
-                    <InboxIcon color="secondary" />
-                  ) : (
-                    <MailIcon color="secondary" />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              display: 'flex',
+              padding: '0px 24px',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px',
+              alignSelf: 'stretch',
+            }}
+          >
+            <Stack
+              direction={'row'}
+              sx={{
+                borderRadius: '8px',
+                p: '8px',
+                gap: '8px',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <Image src={userImg} alt="icon" />
+              <Typography variant="sidebarList">User name</Typography>
+            </Stack>
 
-        <Divider sx={{ backgroundColor: 'grey' }} />
-
-        <List>
-          {ListItemsP3.map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <SettingsIcon color="secondary" />
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <ListItem
-          sx={{
-            color: 'white',
-            justifyContent: 'center',
-            textAlign: 'right',
-            backgroundColor: 'primary',
-            boxShadow: '0 -1px 0 #404854 inset',
-            // paddingTop: theme.spacing(2),
-            // paddingBottom: theme.spacing(2),
-            top: 'auto',
-            position: 'relative',
-            bottom: 0,
-            boxSizing: 'border-box',
-          }}
-        >
-          Footer
-        </ListItem>
-      </Drawer>
-    </>
+            <Image src={chevronUp} alt="icon" />
+          </Box>
+        </Box>
+      </Box>
+    </Drawer>
   )
 }

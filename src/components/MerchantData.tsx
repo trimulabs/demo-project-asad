@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
 import { Box, Typography, Stack, Chip, Button } from '@mui/material'
 import theme from '@/styles/ThemeRegistry/theme'

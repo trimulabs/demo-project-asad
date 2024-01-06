@@ -9,9 +9,7 @@ import type {
 } from '@emotion/cache'
 
 export type NextAppDirEmotionCacheProviderProps = {
-  /** This is the options passed to createCache() from 'import createCache from "@emotion/cache"' */
   options: Omit<OptionsOfCreateCache, 'insertionPoint'>
-  /** By default <CacheProvider /> from 'import { CacheProvider } from "@emotion/react"' */
   CacheProvider?: (props: {
     value: EmotionCache
     children: React.ReactNode
@@ -19,7 +17,6 @@ export type NextAppDirEmotionCacheProviderProps = {
   children: React.ReactNode
 }
 
-// Adapted from https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
 export default function NextAppDirEmotionCacheProvider(
   props: NextAppDirEmotionCacheProviderProps
 ) {
@@ -80,14 +77,12 @@ export default function NextAppDirEmotionCacheProvider(
           <style
             key={name}
             data-emotion={`${registry.cache.key}-global ${name}`}
-            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: style }}
           />
         ))}
         {styles && (
           <style
             data-emotion={dataEmotionAttribute}
-            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: styles }}
           />
         )}

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createTheme } from '@mui/material'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import COLORS from '@/styles/colors'
@@ -17,6 +16,8 @@ interface CustomTypographyVariants {
   labelL: React.CSSProperties
   labelM: React.CSSProperties
   labelS: React.CSSProperties
+  labelSS: React.CSSProperties
+  sidebarList: React.CSSProperties
   labelXS: React.CSSProperties
   errorBodyXS: React.CSSProperties
 }
@@ -38,6 +39,8 @@ declare module '@mui/material/Typography' {
     labelL: true
     labelM: true
     labelS: true
+    labelSS: true
+    sidebarList: true
     labelXS: true
     bodyXL: true
     bodyL: true
@@ -49,7 +52,6 @@ declare module '@mui/material/Typography' {
     bodySM: true
     bodySSM: true
     bodyMM: true
-
     bodySSX: true
     bodySXX: true
   }
@@ -97,6 +99,16 @@ const typographyOptions = {
     fontWeight: 600,
     lineHeight: '142.857%',
   },
+  labelSS: {
+    fontSize: '14px',
+    fontWeight: 500,
+    lineHeight: '142.857%',
+  },
+  sidebarList: {
+    fontSize: '13px',
+    fontWeight: 500,
+    lineHeight: '153.846%',
+  },
   labelXS: {
     fontSize: '12px',
     fontWeight: 600,
@@ -129,14 +141,17 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
+          padding: '6px 20px',
           textTransform: 'none',
+          boxShadow: 'none',
+        },
+        containedPrimary: {
           color: 'white',
-          backgroundColor: COLORS.btnColor,
-
-          paddingTop: '6px',
-          paddingBottom: '6px',
-          paddingLeft: '20px',
-          paddingRight: '20px',
+          backgroundColor: COLORS.btnBlack,
+        },
+        containedSecondary: {
+          color: 'black',
+          backgroundColor: COLORS.btnLightBlue,
         },
       },
     },

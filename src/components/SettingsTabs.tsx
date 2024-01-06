@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import { Tabs, Tab, Typography, Box } from '@mui/material'
+import { Tabs, Tab, Box } from '@mui/material'
 import MerchantData from '@/components/MerchantData'
+import Gateway from '@/components/Gateway'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -22,7 +23,7 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box sx={{ pt: 3, pb: 3 }}>
-          <Typography>{children}</Typography>
+          <Box>{children}</Box>
         </Box>
       )}
     </div>
@@ -68,7 +69,7 @@ export default function SettingsTabs() {
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <Gateway />
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>

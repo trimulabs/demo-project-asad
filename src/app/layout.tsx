@@ -30,18 +30,9 @@ export default function RootLayout({
           <CssBaseline />
           <Sidebar />
           <Wrapper>
-            {/* <Box
-            sx={(theme) => ({
-              gap: '0px',
-              padding: theme.spacing(3),
-              marginLeft: '212px',
-              background: COLORS.secondaryWhite,
-            })}
-          > */}
             <Navbar />
             {children}
           </Wrapper>
-          {/* </Box> */}
         </ThemeRegistry>
       </body>
     </html>
