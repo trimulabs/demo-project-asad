@@ -2,13 +2,7 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import FormData from '@/components/FormData'
 import GenericList from '@/components/GenericList'
-
-const listData1 = [
-  { entity: 'Customer Service', content: '08 / 16 / 2023' },
-  { entity: 'After hours', content: '(800) 228-0210' },
-  { entity: 'Chargeback Department', content: '(818) 540-3407' },
-]
-const listData2 = [{ content: 'busa-cs@bankcardusa.com' }]
+import { listData1, listData2 } from '@/data/constants'
 
 const Gateway = () => {
   return (

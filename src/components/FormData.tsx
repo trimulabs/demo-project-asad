@@ -6,22 +6,12 @@ import COLORS from '@/styles/colors'
 import theme from '@/styles/ThemeRegistry/theme'
 import EmptyUser from '@/../public/Assets/Icons/EmptyUser.svg'
 import editIcon from '@/../public/Assets/Icons/edit-03.svg'
-
-const data = [
-  { entity: 'Merchant Name', content: 'ABC Payments' },
-  { entity: 'Contact Name', content: 'John Smith' },
-  { entity: 'Contact Email', content: 'dummy@coding.io' },
-  { entity: 'Contact Phone', content: '+6281234567890' },
-  { entity: 'Contact Address', content: 'Jakarta' },
-  { entity: 'Contact City', content: 'Jakarta' },
-  { entity: 'Merchant ID', content: '4069500400011342' },
-]
+import { gatewayData } from '@/data/constants'
 
 export default function FromData() {
   return (
     <Box
       sx={{
-        // width: '608px',
         width: '95%',
         bgcolor: COLORS.white,
         borderRadius: theme.spacing(2),
@@ -81,23 +71,25 @@ export default function FromData() {
       </Stack>
 
       <Box sx={{ padding: theme.spacing(2.5) }}>
-        {data.map((item, index) => (
+        {gatewayData.map((item, index) => (
           <Box
             key={index}
             sx={{
               borderBottom:
-                index !== data.length - 1
+                index !== gatewayData.length - 1
                   ? `1px solid ${COLORS.selected}`
                   : 'none',
               marginBottom:
-                index !== data.length - 1 ? theme.spacing(3) : 'none',
+                index !== gatewayData.length - 1 ? theme.spacing(3) : 'none',
             }}
           >
             <Stack
               direction="column"
               sx={{
                 paddingBottom:
-                  index !== data.length - 1 ? theme.spacing(1.5) : 'none',
+                  index !== gatewayData.length - 1
+                    ? theme.spacing(1.5)
+                    : 'none',
                 gap: theme.spacing(0.75),
               }}
             >
