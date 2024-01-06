@@ -1,17 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import { Box, Typography } from '@mui/material'
-import Image from 'next/image'
 import React from 'react'
-import logo from '@/../public/Assets/Images/logo.svg'
-import home from '@/../public/Assets/Icons/home-smile.svg'
+import COLORS from '@/styles/colors'
 
+interface IconProps {
+  color?: string
+}
 interface Prop {
   title: string
-  icon: string
+  icon: React.FC<IconProps>
 }
 
-const SidebarListItem: React.FC<Prop> = ({ title, icon }) => {
+const SidebarListItem: React.FC<Prop & { isSelected?: boolean }> = ({
+  title,
+  icon: Icon,
+  isSelected = false,
+}) => {
   return (
     <Box
       sx={{
@@ -21,19 +25,27 @@ const SidebarListItem: React.FC<Prop> = ({ title, icon }) => {
         height: '40px',
         p: '0px 8px 0px 8px',
         gap: '12px',
+        cursor: 'pointer',
+      }}
+      onClick={() => {
+        console.log('Clicked')
       }}
     >
       <Box
         sx={{
+          width: '100%',
           borderRadius: '8px',
           p: '8px',
           gap: '8px',
           display: 'flex',
           alignItems: 'center',
+          '&:hover': {
+            backgroundColor: COLORS.iconSelection,
+          },
+          background: isSelected ? COLORS.iconSelection : 'none',
         }}
       >
-        <Image src={home} alt="icon" width={16} height={16} />
-
+        <Icon color={COLORS.icon} />
         <Typography variant="sidebarList">{title}</Typography>
       </Box>
     </Box>

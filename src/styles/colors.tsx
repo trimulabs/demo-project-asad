@@ -9,6 +9,9 @@ const COLORS = {
   badgeSuccess: '#CBEAD9',
   lightBlue: '#E6F4F8',
   sideDivider: '#4B5565',
+  icon: '#9AA4B2',
+  iconSelection: '#ffffff14',
+  iconSelected: '#00A0AC',
 }
 
 export default COLORS

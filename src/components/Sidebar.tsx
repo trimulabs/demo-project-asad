@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Drawer, Toolbar, Box, Typography, Stack, Divider } from '@mui/material'
 import logo from '@/../public/Assets/Images/logo.svg'
 import theme from '@/styles/ThemeRegistry/theme'
@@ -8,11 +8,17 @@ import SidebarList from '@/components/SidebarListItem'
 import COLORS from '@/styles/colors'
 import userImg from '@/../public/Assets/Images/user.svg'
 import chevronUp from '@/../public/Assets/Icons/chevron-up.svg'
-import home from '@/../public/Assets/Icons/home-smile.svg'
+
+import { SIDEBAR_MENU } from '@/data/constants'
 
 const drawerWidth = 212
 
 export default function PermanentDrawerLeft() {
+  const [selectedItem, setSelectedItem] = useState<number | null>(null)
+  const handleItemClick = (index: number) => {
+    setSelectedItem(index)
+  }
+
   return (
     <Drawer
       sx={{
@@ -45,24 +51,28 @@ export default function PermanentDrawerLeft() {
         }}
       >
         <Box>
-          <SidebarList title="Lead" icon={home} />
-          <SidebarList title="Customers" icon="home" />
-          <SidebarList title="Order" icon="home" />
-          <SidebarList title="Applications" icon="home" />
-          <SidebarList title="Manifest" icon="home" />
-
-          <Divider sx={{ bgcolor: COLORS.sideDivider }} />
-
-          <SidebarList title="Channels" icon="home" />
-          <SidebarList title="Products" icon="home" />
-          <SidebarList title="Fulfilment" icon="home" />
-
-          <Divider sx={{ bgcolor: COLORS.sideDivider }} />
-
-          <SidebarList title="Team" icon="home" />
-          <SidebarList title="Reports" icon="home" />
-          <SidebarList title="System" icon="home" />
-          <SidebarList title="Settings" icon="home" />
+          {SIDEBAR_MENU?.map(({ title, Icon }, index) => (
+            <React.Fragment key={index}>
+              <Box onClick={() => handleItemClick(index)}>
+                <SidebarList
+                  title={title}
+                  icon={() => (
+                    <Icon
+                      color={
+                        selectedItem === index
+                          ? COLORS.iconSelected
+                          : COLORS.icon
+                      }
+                    />
+                  )}
+                  isSelected={selectedItem === index}
+                />
+              </Box>
+              {(index === 5 || index === 8) && (
+                <Divider color={COLORS.sideDivider} />
+              )}
+            </React.Fragment>
+          ))}
         </Box>
         <Box>
           <Box
