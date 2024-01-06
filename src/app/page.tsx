@@ -1,6 +1,10 @@
-// import Image from 'next/image'
-// import styles from './page.module.css'
+import SettingsTabs from '@/components/SettingsTabs'
+import { Box } from '@mui/material'
 
 export default function Home() {
-  return <h1>Hello GOV</h1>
+  return (
+    <Box sx={{ background: 'secondary', height: '100vh' }}>
+      <SettingsTabs />
+    </Box>
+  )
 }
