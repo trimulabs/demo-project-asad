@@ -1,13 +1,12 @@
 'use client'
 import Image from 'next/image'
-import * as React from 'react'
-import { Box, Stack, Avatar, Typography, Button } from '@mui/material'
-
+import React from 'react'
+import { Box, Stack, Typography, Button } from '@mui/material'
 import COLORS from '@/styles/colors'
 import theme from '@/styles/ThemeRegistry/theme'
-import GatewayIcon from '@/../public/Assets/Icons/GatewayIcon.svg'
 import editIcon from '@/../public/Assets/Icons/edit-03.svg'
 import { gatewayDetail } from '@/data/constants'
+import GatewayIcon from '@/components/icons/Gateway'
 
 export default function MerchantDetails() {
   return (
@@ -47,17 +46,13 @@ export default function MerchantDetails() {
               width: '52px',
               height: '52px',
               bgcolor: COLORS.lightBlue,
-              padding: theme.spacing(1.25),
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
               borderRadius: theme.spacing(1.5),
             }}
           >
-            <Avatar
-              src={GatewayIcon.src}
-              sx={{
-                width: '28px',
-                height: '28px',
-              }}
-            />
+            <GatewayIcon />
           </Box>
 
           <Typography variant="labelL">Encrypt Gateway</Typography>
