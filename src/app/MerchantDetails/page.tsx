@@ -5,7 +5,7 @@ import { Box, Stack, Avatar, Typography, Button } from '@mui/material'
 
 import COLORS from '@/styles/colors'
 import theme from '@/styles/ThemeRegistry/theme'
-import GatewayIcon from '@/../public/Assets/Icons/Gatewayicon.svg'
+import GatewayIcon from '@/../public/Assets/Icons/GatewayIcon.svg'
 import editIcon from '@/../public/Assets/Icons/edit-03.svg'
 import { gatewayDetail } from '@/data/constants'
 
@@ -60,7 +60,7 @@ export default function MerchantDetails() {
             />
           </Box>
 
-          <Typography variant="labelL">Ecrypt Gateway</Typography>
+          <Typography variant="labelL">Encrypt Gateway</Typography>
         </Stack>
         <Button
           color="secondary"
