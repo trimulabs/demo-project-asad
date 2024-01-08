@@ -11,6 +11,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
         padding: theme.spacing(3),
         marginLeft: '212px',
         background: COLORS.secondaryWhite,
+        height: '100vh',
       }}
     >
       {children}

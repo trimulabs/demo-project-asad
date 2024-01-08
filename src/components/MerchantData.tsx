@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import { Box, Typography, Stack, Chip, Button } from '@mui/material'
 import theme from '@/styles/ThemeRegistry/theme'
 import COLORS from '@/styles/colors'
@@ -52,8 +53,18 @@ export default function MerchantData() {
               <Typography variant="labelM">{title}</Typography>
               <Chip color="success" label="Active" />
             </Stack>
+            <Link href="/MerchantDetails" type="button">
+              Blog Post
+            </Link>
 
-            <Button variant="contained">Manage</Button>
+            {/* <Button
+              variant="contained"
+              onClick={() => {
+                console.log(title)
+              }}
+            >
+              Manage
+            </Button> */}
           </Box>
         )
       })}
