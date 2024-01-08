@@ -119,14 +119,14 @@ const createData = (
 }
 
 export const TransactionTableRows: TableDataType[] = [
-  createData('John Doe', '2022-01-01 10:30 AM', 50.0, 'Pending'),
-  createData('Alice Smith', '2022-01-02 12:45 PM', 75.5, 'Completed'),
-  createData('Bob Johnson', '2022-01-03 03:15 PM', 30.2, 'Failed'),
-  createData('Eva Brown', '2022-01-04 09:00 AM', 100.0, 'Pending'),
-  createData('Charlie Wilson', '2022-01-05 11:30 AM', 45.8, 'Completed'),
-  createData('Grace Taylor', '2022-01-06 02:00 PM', 80.3, 'Pending'),
-  createData('Daniel Harris', '2022-01-07 04:45 PM', 25.0, 'Completed'),
-  createData('Olivia Davis', '2022-01-08 08:15 AM', 60.7, 'Failed'),
-  createData('Michael Miller', '2022-01-09 01:30 PM', 90.5, 'Pending'),
-  createData('Sophia Jackson', '2022-01-10 05:00 PM', 40.2, 'Failed'),
+  createData('John Doe', '12/28/2023, 10:30:00', 2500, 'Pending'),
+  createData('Alice Smith', '12/28/2023, 12:45:00', 3750.5, 'Approved'),
+  createData('Bob Johnson', '12/28/2023, 15:15:00', 1200.2, 'Declined'),
+  createData('Eva Brown', '12/28/2023, 09:00:00', 5000.0, 'Pending'),
+  createData('Charlie Wilson', '12/28/2023, 11:30:00', 4580.8, 'Approved'),
+  createData('Grace Taylor', '12/28/2023, 14:00:00', 8030.3, 'Pending'),
+  createData('Daniel Harris', '12/28/2023, 16:45:00', 2500.0, 'Approved'),
+  createData('Olivia Davis', '12/28/2023, 08:15:00', 6070.7, 'Declined'),
+  createData('Michael Miller', '12/28/2023, 13:30:00', 9050.5, 'Pending'),
+  createData('Sophia Jackson', '12/28/2023, 17:00:00', 4020.2, 'Declined'),
 ]

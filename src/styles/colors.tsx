@@ -6,12 +6,20 @@ const COLORS = {
   btnBlack: '#121926',
   btnLightBlue: '##EEF2F6',
   selected: '#E3E8EF',
-  badgeSuccess: '#CBEAD9',
+  badgeActive: '#CBEAD9',
+  badgeSuccess: '#ECFDF3',
+  badgeSuccessContent: '#067647',
+  badgeError: '#FEF3F2',
+  badgeErrorContent: '#B42318',
+  badgeWarning: '#FFFAEB',
+  badgeWarningContent: '#DC6803',
   lightBlue: '#E6F4F8',
   sideDivider: '#4B5565',
   icon: '#9AA4B2',
   iconSelection: '#ffffff14',
   iconSelected: '#00A0AC',
+  contentSecondary: '#4B5565',
+  contentPrimary: '#121926',
 }
 
 export default COLORS

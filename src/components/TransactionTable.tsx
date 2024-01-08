@@ -1,24 +1,53 @@
 import * as React from 'react'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+  Chip,
+  Box,
+} from '@mui/material'
 
 import { TransactionTableRows } from '@/data/constants'
+import COLORS from '@/styles/colors'
+import theme from '@/styles/ThemeRegistry/theme'
+import Image from 'next/image'
+import arrowRight from '@/../public/Assets/Icons/arrowRight.svg'
 
 export default function TransactionTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer>
+      <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Customer name</TableCell>
-            <TableCell>Date & Time</TableCell>
-            <TableCell>Amount</TableCell>
-            <TableCell>Status</TableCell>
+            <TableCell>
+              <Typography
+                variant="headingXL"
+                sx={{ color: `${COLORS.contentSecondary}` }}
+              >
+                Customer name
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography sx={{ color: `${COLORS.contentSecondary}` }}>
+                Date & Time
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography sx={{ color: `${COLORS.contentSecondary}` }}>
+                Amount
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography sx={{ color: `${COLORS.contentSecondary}` }}>
+                Status
+              </Typography>
+            </TableCell>
+
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -28,12 +57,60 @@ export default function TransactionTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                  {row.name}
+                </Typography>
               </TableCell>
 
-              <TableCell>{row.dateTime}</TableCell>
-              <TableCell>{row.amount}</TableCell>
-              <TableCell>{row.status}</TableCell>
+              <TableCell>
+                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                  {row.dateTime}
+                </Typography>
+              </TableCell>
+
+              <TableCell>
+                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                  ${row.amount}
+                </Typography>
+              </TableCell>
+
+              <TableCell>
+                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                  {row.status === 'Approved' && (
+                    <Chip color="success" label={`${row.status}`} />
+                  )}
+
+                  {row.status === 'Pending' && (
+                    <Chip color="warning" label={`${row.status}`} />
+                  )}
+
+                  {row.status === 'Declined' && (
+                    <Chip color="error" label={`${row.status}`} />
+                  )}
+                </Typography>
+              </TableCell>
+
+              <TableCell>
+                <Box
+                  onClick={() => {
+                    // add some click functionality here...
+                  }}
+                  sx={{
+                    padding: '14px 20px 14px 20px',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: theme.spacing(4),
+                    height: theme.spacing(4),
+                    borderRadius: theme.spacing(1),
+                    background: COLORS.selected,
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Image src={arrowRight} alt="icon"></Image>
+                </Box>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

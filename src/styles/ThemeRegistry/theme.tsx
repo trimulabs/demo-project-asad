@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material'
+import { colors, createTheme } from '@mui/material'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import COLORS from '@/styles/colors'
 
@@ -190,12 +190,50 @@ const theme = createTheme({
         root: {
           borderRadius: '100px',
           textTransform: 'capitalize',
-          padding: '8px 12px 8px 12px',
+          // padding: '8px 12px 8px 12px',
           height: '24px',
         },
         colorSuccess: {
           background: COLORS.badgeSuccess,
-          color: 'black',
+          color: COLORS.badgeSuccessContent,
+        },
+        colorError: {
+          background: COLORS.badgeError,
+          color: COLORS.badgeErrorContent,
+        },
+        colorWarning: {
+          background: COLORS.badgeWarning,
+          color: COLORS.badgeWarningContent,
+        },
+      },
+    },
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          // width: '940px',
+          minWidth: '320px',
+          maxWidth: '1140px',
+          borderRadius: '16px',
+          border: `1px solid  ${COLORS.selected}`,
+          background: `${COLORS.white}`,
+        },
+      },
+    },
+
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          height: '36px',
+          background: `${COLORS.selected}`,
+          borderBottom: `1px solid ${COLORS.selected}`,
+        },
+      },
+    },
+
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          padding: '12px 20px',
         },
       },
     },
