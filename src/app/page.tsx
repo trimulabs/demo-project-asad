@@ -1,6 +1,5 @@
-// import Image from 'next/image'
-// import styles from './page.module.css'
+import SettingsTabs from '@/components/SettingsTabs'
 
 export default function Home() {
-  return <h1>Hello GOV</h1>
+  return <SettingsTabs />
 }
