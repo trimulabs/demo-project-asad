@@ -25,24 +25,33 @@ export default function TransactionTable() {
           <TableRow>
             <TableCell>
               <Typography
-                variant="headingXL"
                 sx={{ color: `${COLORS.contentSecondary}` }}
+                variant="labelS"
               >
                 Customer name
               </Typography>
             </TableCell>
             <TableCell>
-              <Typography sx={{ color: `${COLORS.contentSecondary}` }}>
+              <Typography
+                sx={{ color: `${COLORS.contentSecondary}` }}
+                variant="labelS"
+              >
                 Date & Time
               </Typography>
             </TableCell>
             <TableCell>
-              <Typography sx={{ color: `${COLORS.contentSecondary}` }}>
+              <Typography
+                sx={{ color: `${COLORS.contentSecondary}` }}
+                variant="labelS"
+              >
                 Amount
               </Typography>
             </TableCell>
             <TableCell>
-              <Typography sx={{ color: `${COLORS.contentSecondary}` }}>
+              <Typography
+                sx={{ color: `${COLORS.contentSecondary}` }}
+                variant="labelS"
+              >
                 Status
               </Typography>
             </TableCell>
@@ -57,19 +66,28 @@ export default function TransactionTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                <Typography
+                  sx={{ color: `${COLORS.contentPrimary}` }}
+                  variant="labelS"
+                >
                   {row.name}
                 </Typography>
               </TableCell>
 
               <TableCell>
-                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                <Typography
+                  sx={{ color: `${COLORS.contentPrimary}` }}
+                  variant="labelS"
+                >
                   {row.dateTime}
                 </Typography>
               </TableCell>
 
               <TableCell>
-                <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
+                <Typography
+                  sx={{ color: `${COLORS.contentPrimary}` }}
+                  variant="labelS"
+                >
                   ${row.amount}
                 </Typography>
               </TableCell>
@@ -77,15 +95,39 @@ export default function TransactionTable() {
               <TableCell>
                 <Typography sx={{ color: `${COLORS.contentPrimary}` }}>
                   {row.status === 'Approved' && (
-                    <Chip color="success" label={`${row.status}`} />
+                    <Chip
+                      color="success"
+                      label={`${row.status}`}
+                      sx={{
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        lineHeight: '142.857%',
+                      }}
+                    />
                   )}
 
                   {row.status === 'Pending' && (
-                    <Chip color="warning" label={`${row.status}`} />
+                    <Chip
+                      color="warning"
+                      label={`${row.status}`}
+                      sx={{
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        lineHeight: '142.857%',
+                      }}
+                    />
                   )}
 
                   {row.status === 'Declined' && (
-                    <Chip color="error" label={`${row.status}`} />
+                    <Chip
+                      color="error"
+                      label={`${row.status}`}
+                      sx={{
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        lineHeight: '142.857%',
+                      }}
+                    />
                   )}
                 </Typography>
               </TableCell>
