@@ -29,6 +29,14 @@ export const gatewayData = [
   { entity: 'Contact City', content: 'Jakarta' },
   { entity: 'Merchant ID', content: '4069500400011342' },
 ]
+
+export const gatewayDetail = [
+  { entity: 'API Login ID', content: '8C6ZRzFm58jr' },
+  {
+    entity: 'API transaction key',
+    content: 'zaCELgL. 0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx',
+  },
+]
 interface IconProps {
   color: string
 }
