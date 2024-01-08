@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Tabs, Tab, Box } from '@mui/material'
 import MerchantData from '@/components/MerchantData'
 import Gateway from '@/components/Gateway'
+import TransactionTable from '@/components/TransactionTable'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -73,7 +74,7 @@ export default function SettingsTabs() {
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <TransactionTable />
       </CustomTabPanel>
     </Box>
   )
