@@ -13,6 +13,7 @@ const COLORS = {
   badgeErrorContent: '#B42318',
   badgeWarning: '#FFFAEB',
   badgeWarningContent: '#DC6803',
+  badgeDisableContent: '#697586',
   lightBlue: '#E6F4F8',
   sideDivider: '#4B5565',
   icon: '#9AA4B2',

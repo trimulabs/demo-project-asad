@@ -1,7 +1,8 @@
-import * as React from 'react'
-import { Box, Typography, Stack, Chip, Button } from '@mui/material'
+import React from 'react'
+import { Box, Typography, Stack, Button } from '@mui/material'
 import theme from '@/styles/ThemeRegistry/theme'
 import COLORS from '@/styles/colors'
+import CustomBadge from './badges/CustomBadge'
 
 export default function MerchantData() {
   return (
@@ -50,7 +51,11 @@ export default function MerchantData() {
                 {index + 1}
               </Box>
               <Typography variant="labelM">{title}</Typography>
-              <Chip color="success" label="Active" />
+              {index === 2 ? (
+                <CustomBadge content="Disable" type="Disable" />
+              ) : (
+                <CustomBadge content="Active" type="Active" />
+              )}
             </Stack>
 
             <Button variant="contained" href="/MerchantDetails">
